@@ -371,14 +371,29 @@ nav {
 }
 
 .banner__card {
+  position: relative;
   padding: 2rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   border-radius: 3rem;
   transition: 0.3s;
+  overflow: hidden;
 }
 
 .banner__card:hover {
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.banner__card .banner__icon,
+.banner__card h4,
+.banner__card p {
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.banner__card:hover .banner__icon,
+.banner__card:hover h4,
+.banner__card:hover p {
+  filter: blur(3px);
+  opacity: 0.5;
 }
 
 .banner__card .banner__icon {
@@ -448,6 +463,27 @@ nav {
 
 .banner__card a:hover span {
   transform: translateX(10px);
+}
+
+.banner__card .btn-hover {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(200%);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.banner__card:hover .btn-hover {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 .contact-form {

@@ -55,8 +55,8 @@ const Login = () => {
               </div>
               <a href="#" className="login__button">Sign Up</a>
               <div>
-                <span className="login__account">Already have an Account ?</span>
-                <span className="login__signup" onClick={toggleForm}>Sign In</span>
+                <span className="login__account">Already have an Account? </span>
+                <span className="login__signup" onClick={toggleForm}> Sign In</span>
               </div>
             </form>
           )}
