@@ -40,6 +40,9 @@ const Login = () => {
             </form>
           ) : (
             <form action="" className="login__create" id="login-up">
+            <div className="login__logo">
+                <img src={BigLogoImg}></img>
+              </div>
               <h1 className="login__title">Create Account</h1>
               <div className="login__box">
                 <i className="bx bx-user login__icon"></i>
