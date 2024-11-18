@@ -255,8 +255,8 @@ const Home = () => {
           <div className="footer__col">
             <h4>Information</h4>
             <ul className="footer__links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
           <div className="footer__col">

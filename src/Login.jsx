@@ -24,8 +24,8 @@ const Login = () => {
               </div>
               <h1 className="login__title">Sign In</h1>
               <div className="login__box">
-                <i className="bx bx-user login__icon"></i>
-                <input type="text" placeholder="Username" className="login__input" />
+                <i className="bx bx-at login__icon"></i>
+                <input type="text" placeholder="Email" className="login__input" />
               </div>
               <div className="login__box">
                 <i className="bx bx-lock-alt login__icon"></i>
