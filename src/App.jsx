@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import HealthInsurance from "./HealthInsurance";
+import TravelInsurance from "./TravelInsurance";
+import KidsCareInsurance from "./KidsCareInsurance";
+import LifeInsurance from "./LifeInsurance";
+import HomeInsurance from "./HomeInsurance";
+import CarInsurance from "./CarInsurance";
 
 const App = () => {
     return (
@@ -11,6 +16,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/health" element={<HealthInsurance />}/>
+          <Route path="/travel" element={<TravelInsurance />}/>
+          <Route path="/kidscare" element={<KidsCareInsurance />}/>
+          <Route path="/life" element={<LifeInsurance />}/>
+          <Route path="/home" element={<HomeInsurance />}/>
+          <Route path="/car" element={<CarInsurance />}/>
         </Routes>
       </Router>
     );

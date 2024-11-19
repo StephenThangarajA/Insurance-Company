@@ -26,6 +26,27 @@ const Home = () => {
   const handleHealthInsurance = () => {
     navigate("/health");
   };
+
+  const handleTravelInsurance = () => {
+    navigate("/travel");
+  };
+
+  const handleKidsCareInsurance = () => {
+    navigate("/kidscare");
+  };
+
+  const handleLifeInsurance = () => {
+    navigate("/life");
+  };
+
+  const handleHomeInsurance = () => {
+    navigate("/home");
+  };
+
+  const handleCarInsurance = () => {
+    navigate("/car");
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -143,31 +164,31 @@ const Home = () => {
           <span className="banner__icon"><i className="ri-truck-fill"></i><IonIcon icon={fitnessOutline} /></span>
           <h4>Life Insurance</h4>
           <p>Ensure lasting security for you and your loved ones with straightforward life insurance providing peace of mind and protection from financial problems.</p>
-          <button class="btn-hover">Learn More</button>
+          <button class="btn-hover" onClick={handleLifeInsurance}>Learn More</button>
         </div>
         <div className="banner__card">
           <span className="banner__icon"><i className="ri-star-smile-fill"></i><IonIcon icon={airplaneOutline} /></span>
           <h4>Travel Insurance</h4>
           <p>Embark on every journey with confidence protect yourself and your adventures with easy, offering peace of mind wherever you go.</p>
-          <button class="btn-hover">Learn More</button>
+          <button class="btn-hover" onClick={handleTravelInsurance}>Learn More</button>
         </div>
         <div className="banner__card">
           <span className="banner__icon"><i className="ri-bowl-fill"></i><IonIcon icon={happyOutline} /></span>
           <h4>KidsCare Insurance</h4>
           <p>Safeguard your child's future with our KidCare insurance provides reliable protection and peace of mind, so you can focus on every precious moment.</p>
-          <button class="btn-hover">Learn More</button>
+          <button class="btn-hover" onClick={handleKidsCareInsurance}>Learn More</button>
         </div>
         <div className="banner__card">
           <span className="banner__icon"><i className="ri-truck-fill"></i><IonIcon icon={homeOutline} /></span>
           <h4>Home Insurance</h4>
           <p>Protect your home and everything in it with comprehensive coverage secure peace of mind for your family's safe haven, all in one simple step.</p>
-          <button class="btn-hover">Learn More</button>
+          <button class="btn-hover" onClick={handleHomeInsurance}>Learn More</button>
         </div>
         <div className="banner__card">
           <span className="banner__icon"><i className="ri-star-smile-fill"></i><IonIcon icon={carSportOutline} /></span>
           <h4>Car Insurance</h4>
           <p>Drive with confidence, knowing that your car is fully protected with trustworthy coverage designed to keep you safe on every mile of your journey.</p>
-          <button class="btn-hover">Learn More</button>
+          <button class="btn-hover" onClick={handleCarInsurance}>Learn More</button>
         </div>
       </section>
 
