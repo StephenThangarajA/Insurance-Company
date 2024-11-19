@@ -23,6 +23,9 @@ const Home = () => {
     navigate("/login");
   };
 
+  const handleHealthInsurance = () => {
+    navigate("/health");
+  };
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -134,7 +137,7 @@ const Home = () => {
           <span className="banner__icon"><i className="ri-bowl-fill"></i><IonIcon icon={medkitOutline} /></span>
           <h4>Health Insurance</h4>
           <p>Protect your health and finances with ease. Simplify your healthcare decisions and enjoy peace of mind with one-click security for you and your loved ones.</p>
-          <button class="btn-hover">Learn More</button>
+          <button class="btn-hover" onClick={handleHealthInsurance}>Learn More</button>
         </div>
         <div className="banner__card">
           <span className="banner__icon"><i className="ri-truck-fill"></i><IonIcon icon={fitnessOutline} /></span>
