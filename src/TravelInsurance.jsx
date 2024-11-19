@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Doctor from './assets/doctor.png';
-import Group from './assets/group.png';
-import Appointment from './assets/appointment.png'
+import Agent from './assets/agent2.png';
+import Group from './assets/group2.png';
+import Appointment from './assets/appointment2.png'
 import InformationCard from "./InformationCard";
 import SolutionStep from "./SolutionStep";
 import { faCircleCheck, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -65,7 +65,7 @@ function TravelInsurance() {
             </div>
           </div>
           <div className="hero-image-section">
-            <img className="hero-image1" src={Doctor} alt="Travel" />
+            <img className="hero-image1" src={Agent} alt="Travel" />
           </div>
         </div>
         <div onClick={scrollToTop} className={`scroll-up ${goUp ? "show-scroll" : ""}`}>
@@ -147,7 +147,7 @@ function TravelInsurance() {
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Affordable and Flexible Plans
           </p>
           <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
-            <FontAwesomeIcon icon={faCalendarCheck} /> Get Covered Now
+            <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>
       </div>

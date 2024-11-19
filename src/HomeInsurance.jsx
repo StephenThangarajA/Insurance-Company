@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Doctor from './assets/doctor.png';
-import Group from './assets/group.png';
-import Appointment from './assets/appointment.png';
+import Agent from './assets/agent2.png';
+import Group from './assets/group2.png';
+import Appointment from './assets/appointment2.png';
 import InformationCard from "./InformationCard";
 import SolutionStep from "./SolutionStep";
 import { faCircleCheck, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -46,7 +46,7 @@ function HomeInsurance() {
               Ensure your home and belongings are protected with our comprehensive home insurance plans. From property damage to liability, we cover it all.
             </p>
             <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
-              <FontAwesomeIcon icon={faCalendarCheck} /> Get A Quote
+              <FontAwesomeIcon icon={faCalendarCheck} /> Explore Plans
             </button>
             <div className="text-stats">
               <div className="text-stats-container">
@@ -64,7 +64,7 @@ function HomeInsurance() {
             </div>
           </div>
           <div className="hero-image-section">
-            <img className="hero-image1" src={Doctor} alt="Home Insurance" />
+            <img className="hero-image1" src={Agent} alt="Home Insurance" />
           </div>
         </div>
         <div onClick={scrollToTop} className={`scroll-up ${goUp ? "show-scroll" : ""}`}>
@@ -142,7 +142,7 @@ function HomeInsurance() {
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> 24/7 Customer Support
           </p>
           <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
-            <FontAwesomeIcon icon={faCalendarCheck} /> Get Your Quote
+            <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>
       </div>

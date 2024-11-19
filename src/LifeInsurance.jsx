@@ -142,7 +142,7 @@ function LifeInsurance() {
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Guaranteed Payouts
           </p>
           <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
-            <FontAwesomeIcon icon={faCalendarCheck} /> Get Started Today
+            <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>
       </div>

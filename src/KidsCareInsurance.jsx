@@ -142,7 +142,7 @@ function KidsCareInsurance() {
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Affordable & Flexible Plans
           </p>
           <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
-            <FontAwesomeIcon icon={faCalendarCheck} /> Get Covered Today
+            <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>
       </div>

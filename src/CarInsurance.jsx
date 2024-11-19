@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Doctor from './assets/doctor.png';
-import Group from './assets/group.png';
-import Appointment from './assets/appointment.png';
+import Agent from './assets/agent2.png';
+import Group from './assets/group2.png';
+import Appointment from './assets/appointment2.png';
 import InformationCard from "./InformationCard";
 import SolutionStep from "./SolutionStep";
 import { faCircleCheck, faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -46,7 +46,7 @@ function CarInsurance() {
               Drive with peace of mind. Our car insurance plans provide comprehensive coverage for accidents, theft, and more.
             </p>
             <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
-              <FontAwesomeIcon icon={faCalendarCheck} /> Get A Quote
+              <FontAwesomeIcon icon={faCalendarCheck} /> Explore Plans
             </button>
             <div className="text-stats">
               <div className="text-stats-container">
@@ -64,7 +64,7 @@ function CarInsurance() {
             </div>
           </div>
           <div className="hero-image-section">
-            <img className="hero-image1" src={Doctor} alt="Car Insurance" />
+            <img className="hero-image1" src={Agent} alt="Car Insurance" />
           </div>
         </div>
         <div onClick={scrollToTop} className={`scroll-up ${goUp ? "show-scroll" : ""}`}>
@@ -142,7 +142,7 @@ function CarInsurance() {
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Affordable Rates
           </p>
           <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
-            <FontAwesomeIcon icon={faCalendarCheck} /> Get Your Quote
+            <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>
       </div>
