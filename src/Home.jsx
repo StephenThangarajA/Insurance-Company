@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IonIcon } from '@ionic/react';
+import emailjs from '@emailjs/browser';
 import { briefcaseOutline, trophyOutline, planetOutline, analyticsOutline } from 'ionicons/icons';
 import { homeOutline, carSportOutline, airplaneOutline, fitnessOutline, happyOutline, medkitOutline } from 'ionicons/icons';
 import './style/Home.css';
@@ -78,6 +79,7 @@ const Home = () => {
       });
       setErrors({});
     }
+    emailjs.sendForm('service_ey7cdg4', 'template_tcgiffv', e.target, 'JYdhTNUvkruG1_Ct7')
   };
 
   return (
