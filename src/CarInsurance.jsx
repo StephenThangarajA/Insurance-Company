@@ -19,8 +19,12 @@ function CarInsurance() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleGetQuoteClick = () => {
-    navigate("/quote");
+  const handleBookAppointmentClick = () => {
+    navigate("/");
+  };
+
+  const handlePlans = () => {
+    navigate("/plans");
   };
 
   useEffect(() => {
@@ -45,7 +49,7 @@ function CarInsurance() {
             <p className="text-description">
               Drive with peace of mind. Our car insurance plans provide comprehensive coverage for accidents, theft, and more.
             </p>
-            <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
+            <button className="text-appointment-btn" type="button" onClick={handlePlans}>
               <FontAwesomeIcon icon={faCalendarCheck} /> Explore Plans
             </button>
             <div className="text-stats">
@@ -141,7 +145,7 @@ function CarInsurance() {
           <p className="ba-checks ba-check-last">
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Affordable Rates
           </p>
-          <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
+          <button className="text-appointment-btn" type="button" onClick={handleBookAppointmentClick}>
             <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>

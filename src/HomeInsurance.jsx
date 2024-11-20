@@ -19,8 +19,12 @@ function HomeInsurance() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleGetQuoteClick = () => {
-    navigate("/quote");
+  const handleBookAppointmentClick = () => {
+    navigate("/");
+  };
+
+  const handlePlans = () => {
+    navigate("/plans");
   };
 
   useEffect(() => {
@@ -45,7 +49,7 @@ function HomeInsurance() {
             <p className="text-description">
               Ensure your home and belongings are protected with our comprehensive home insurance plans. From property damage to liability, we cover it all.
             </p>
-            <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
+            <button className="text-appointment-btn" type="button" onClick={handlePlans}>
               <FontAwesomeIcon icon={faCalendarCheck} /> Explore Plans
             </button>
             <div className="text-stats">
@@ -141,7 +145,7 @@ function HomeInsurance() {
           <p className="ba-checks ba-check-last">
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> 24/7 Customer Support
           </p>
-          <button className="text-appointment-btn" type="button" onClick={handleGetQuoteClick}>
+          <button className="text-appointment-btn" type="button" onClick={handleBookAppointmentClick}>
             <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>

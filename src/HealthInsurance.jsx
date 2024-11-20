@@ -20,7 +20,11 @@ function HealthInsurance() {
   };
 
   const handleBookAppointmentClick = () => {
-    navigate("/appointment");
+    navigate("/");
+  };
+
+  const handlePlans = () => {
+    navigate("/plans");
   };
 
   
@@ -44,7 +48,7 @@ function HealthInsurance() {
           <p className="text-headline">❤️ Health comes first</p>
           <h2 className="text-title">Find your best Health Insurance Plan.</h2>
           <p className="text-description">Protect your health and finances with ease. Simplify your healthcare decisions and enjoy peace of mind with one-click security for you and your loved ones.</p>
-          <button className="text-appointment-btn" type="button" onClick={handleBookAppointmentClick}>
+          <button className="text-appointment-btn" type="button" onClick={handlePlans}>
             <FontAwesomeIcon icon={faCalendarCheck} /> Explore Plans
           </button>
           <div className="text-stats">

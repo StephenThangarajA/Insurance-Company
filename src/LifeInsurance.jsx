@@ -19,6 +19,10 @@ function LifeInsurance() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleBookAppointmentClick = () => {
+    navigate("/");
+  };
+
   const handleBookPlanClick = () => {
     navigate("/plans");
   };
@@ -127,7 +131,7 @@ function LifeInsurance() {
             <span style={{ color: '#100039' }}>Why Choose LifeSecure</span>
           </h3>
           <p className="ba-description">
-            Discover why LifeSecure is the best choice for protecting your family’s future. Our life insurance plans provide comprehensive coverage with unmatched flexibility.
+            Discover why LifeSecure is the best choice for protecting your family's future. Our life insurance plans provide comprehensive coverage with unmatched flexibility.
           </p>
           <p className="ba-checks ba-check-first">
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Trusted by Families Worldwide
@@ -141,7 +145,7 @@ function LifeInsurance() {
           <p className="ba-checks ba-check-last">
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Guaranteed Payouts
           </p>
-          <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
+          <button className="text-appointment-btn" type="button" onClick={handleBookAppointmentClick}>
             <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>

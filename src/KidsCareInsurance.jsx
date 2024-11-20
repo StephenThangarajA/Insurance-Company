@@ -19,7 +19,11 @@ function KidsCareInsurance() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleBookPlanClick = () => {
+  const handleBookAppointmentClick = () => {
+    navigate("/");
+  };
+
+  const handlePlans = () => {
     navigate("/plans");
   };
 
@@ -45,7 +49,7 @@ function KidsCareInsurance() {
             <p className="text-description">
               Protect your little ones with the best pediatric care. Our KidsCare insurance plans offer extensive coverage for children's health, ensuring their well-being with expert care.
             </p>
-            <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
+            <button className="text-appointment-btn" type="button" onClick={handlePlans}>
               <FontAwesomeIcon icon={faCalendarCheck} /> Explore Plans
             </button>
             <div className="text-stats">
@@ -141,7 +145,7 @@ function KidsCareInsurance() {
           <p className="ba-checks ba-check-last">
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Affordable & Flexible Plans
           </p>
-          <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
+          <button className="text-appointment-btn" type="button" onClick={handleBookAppointmentClick}>
             <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>

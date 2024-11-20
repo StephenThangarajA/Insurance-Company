@@ -23,6 +23,10 @@ function TravelInsurance() {
     navigate("/plans");
   };
 
+  const handleBookAppointmentClick = () => {
+    navigate("/");
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setGoUp(window.scrollY > 600);
@@ -146,7 +150,7 @@ function TravelInsurance() {
           <p className="ba-checks ba-check-last">
             <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#FFD700" }} /> Affordable and Flexible Plans
           </p>
-          <button className="text-appointment-btn" type="button" onClick={handleBookPlanClick}>
+          <button className="text-appointment-btn" type="button" onClick={handleBookAppointmentClick}>
             <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
         </div>
