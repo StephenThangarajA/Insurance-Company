@@ -9,6 +9,7 @@ import LifeInsurance from "./LifeInsurance";
 import HomeInsurance from "./HomeInsurance";
 import CarInsurance from "./CarInsurance";
 import Plans from "./Plans";
+import PlanDetails from "./PlanDetails";
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/home" element={<HomeInsurance />}/>
           <Route path="/car" element={<CarInsurance />}/>
           <Route path="/plans" element={<Plans />}/>
+          <Route path="/plandetails" element={<PlanDetails />}/>
         </Routes>
       </Router>
     );

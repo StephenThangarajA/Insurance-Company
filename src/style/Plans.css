@@ -16,11 +16,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.plans-page {
+.plans-page{
     background: linear-gradient(to bottom, #100039, white);
-  }
+}
 
 .back-button {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   cursor: pointer;

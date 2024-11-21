@@ -1,6 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./style/Plans.css";
-import { FaChevronLeft } from "react-icons/fa";
 import Bajaj from "./assets/ins-logo1.webp";
 import Royal from "./assets/ins-logo2.svg";
 import HDFC from "./assets/ins-logo3.png";
@@ -14,14 +14,18 @@ const BackButton = () => {
   };
 
   return (
-    <div className="back-button" onClick={handleBack}>
-      <FaChevronLeft size={20} />
-      <span>Back</span>
+    <div className="back-button" style={{color:'#FFD700'}} onClick={handleBack}>
+      &lt; Back
     </div>
   );
 };
 
 const InsuranceCard = ({ company, policyName, policyPrice }) => {
+  const navigate = useNavigate();
+  const handleProceed = () => {
+    navigate("/plandetails");
+  };
+
   return (
     <div className="insurance-card">
       <div className="card-header">
@@ -36,7 +40,7 @@ const InsuranceCard = ({ company, policyName, policyPrice }) => {
       <div className="card-footer">
         <h2 className="card-price">{policyPrice}</h2>
         <div className="card-actions">
-          <button className="proceed-button">Proceed &gt;</button>
+          <button className="proceed-button" onClick={handleProceed}>Proceed &gt;</button>
         </div>
       </div>
     </div>
