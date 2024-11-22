@@ -3,6 +3,7 @@ import Doctor from './assets/doctor.png';
 import Agent from './assets/ins7.png';
 import Logo from './assets/ins-logo1.webp';
 import "./style/PlanDetails.css";
+import emailjs from '@emailjs/browser';
 
 function PlanDetails() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function PlanDetails() {
       alert("You must agree to the terms and conditions.");
       return;
     }
+    emailjs.sendForm('service_ey7cdg4', 'template_miuitwb', e.target, 'JYdhTNUvkruG1_Ct7')
     alert("Submission successful!");
     window.location.href = "/";
   };

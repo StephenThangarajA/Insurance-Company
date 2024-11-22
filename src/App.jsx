@@ -10,6 +10,7 @@ import HomeInsurance from "./HomeInsurance";
 import CarInsurance from "./CarInsurance";
 import Plans from "./Plans";
 import PlanDetails from "./PlanDetails";
+import Dashboard from "./Dashboard";
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/car" element={<CarInsurance />}/>
           <Route path="/plans" element={<Plans />}/>
           <Route path="/plandetails" element={<PlanDetails />}/>
+          <Route path="/dashboard" element={<Dashboard />}/>
         </Routes>
       </Router>
     );

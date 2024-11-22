@@ -48,6 +48,10 @@ const Home = () => {
     navigate("/car");
   };
 
+  const handleAccount = () => {
+    navigate("/dashboard");
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -101,6 +105,7 @@ const Home = () => {
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact Us</a></li>
+            <li onClick={handleAccount}><a href="#contact">Account</a></li>
           </ul>
         </div>
       </nav>

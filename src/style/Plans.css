@@ -21,7 +21,7 @@ body {
 }
 
 .back-button {
-  margin-top: 10px;
+  padding-top: 10px;
   display: flex;
   align-items: center;
   cursor: pointer;
