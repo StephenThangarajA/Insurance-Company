@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import LoginImg from "./assets/login.svg";
 import BigLogoImg from "./assets/biglogo.svg";
 import "./style/Login.css";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, setDoc, doc } from "firebase/firestore";
+import { auth } from "./firebase";
+
+// Initialize Firestore
+const db = getFirestore();
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -43,7 +49,39 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      navigate("/");
+      if (isLogin) {
+        signInWithEmailAndPassword(auth, formData.email, formData.password)
+          .then((userCredential) => {
+            console.log("User signed in:", userCredential.user);
+            navigate("/");  // Redirect after successful login
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+            console.error(errorCode, errorMessage);
+          });
+      } else {
+        createUserWithEmailAndPassword(auth, formData.email, formData.password)
+          .then(async (userCredential) => {
+            console.log("User signed up:", userCredential.user);
+            // Add user details to Firestore
+            const userRef = doc(db, "users", userCredential.user.uid); // Create a document using the user's UID
+            await setDoc(userRef, {
+              username: formData.username,
+              email: formData.email,
+              createdAt: new Date().toISOString(),  // Store the account creation date
+            });
+            console.log("User details saved in Firestore");
+            navigate("/");  // Redirect after successful signup
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+            console.error(errorCode, errorMessage);
+          });
+      }
     }
   };
 
@@ -67,25 +105,11 @@ const Login = () => {
               <h1 className="login__title">Sign In</h1>
               <div className="login__box">
                 <i className="bx bx-at login__icon"></i>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                  className="login__input"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
+                <input type="text" name="email" placeholder="Email" className="login__input" value={formData.email} onChange={handleChange}/>
               </div>
               <div className="login__box">
                 <i className="bx bx-lock-alt login__icon"></i>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  className="login__input"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
+                <input type="password" name="password" placeholder="Password" className="login__input" value={formData.password} onChange={handleChange}/>
               </div>
               <a href="#" className="login__forgot">Forgot password?</a>
               <button type="submit" className="login__button">Sign In</button>
@@ -102,36 +126,15 @@ const Login = () => {
               <h1 className="login__title">Create Account</h1>
               <div className="login__box">
                 <i className="bx bx-user login__icon"></i>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  className="login__input"
-                  value={formData.username}
-                  onChange={handleChange}
-                />
+                <input type="text" name="username" placeholder="Username" className="login__input" value={formData.username} onChange={handleChange}/>
               </div>
               <div className="login__box">
                 <i className="bx bx-at login__icon"></i>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                  className="login__input"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
+                <input type="text" name="email" placeholder="Email" className="login__input" value={formData.email} onChange={handleChange}/>
               </div>
               <div className="login__box">
                 <i className="bx bx-lock-alt login__icon"></i>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  className="login__input"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
+                <input type="password" name="password" placeholder="Password" className="login__input" value={formData.password} onChange={handleChange}/>
               </div>
               <button type="submit" className="login__button">Sign Up</button>
               <div>
