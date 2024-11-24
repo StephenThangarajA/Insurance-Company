@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import LoginImg from "./assets/login.svg";
 import BigLogoImg from "./assets/biglogo.svg";
 import "./style/Login.css";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { auth } from "./firebase";
 
-// Initialize Firestore
 const db = getFirestore();
 
 const Login = () => {
@@ -46,6 +45,21 @@ const Login = () => {
     return true;
   };
 
+  const handlePasswordReset = () => {
+    if (!formData.email) {
+      alert("Please enter your email to reset your password.");
+      return;
+    }
+    sendPasswordResetEmail(auth, formData.email)
+      .then(() => {
+        alert("Password reset email sent!");
+      })
+      .catch((error) => {
+        console.error("Error resetting password:", error.message);
+        alert(error.message);
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -53,7 +67,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, formData.email, formData.password)
           .then((userCredential) => {
             console.log("User signed in:", userCredential.user);
-            navigate("/");  // Redirect after successful login
+            navigate("/");
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -65,15 +79,14 @@ const Login = () => {
         createUserWithEmailAndPassword(auth, formData.email, formData.password)
           .then(async (userCredential) => {
             console.log("User signed up:", userCredential.user);
-            // Add user details to Firestore
-            const userRef = doc(db, "users", userCredential.user.uid); // Create a document using the user's UID
+            const userRef = doc(db, "users", userCredential.user.uid);
             await setDoc(userRef, {
               username: formData.username,
               email: formData.email,
-              createdAt: new Date().toISOString(),  // Store the account creation date
+              createdAt: new Date().toISOString(),
             });
             console.log("User details saved in Firestore");
-            navigate("/");  // Redirect after successful signup
+            navigate("/");
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -105,13 +118,13 @@ const Login = () => {
               <h1 className="login__title">Sign In</h1>
               <div className="login__box">
                 <i className="bx bx-at login__icon"></i>
-                <input type="text" name="email" placeholder="Email" className="login__input" value={formData.email} onChange={handleChange}/>
+                <input type="text" name="email" id="email" placeholder="Email" className="login__input" value={formData.email} onChange={handleChange}/>
               </div>
               <div className="login__box">
                 <i className="bx bx-lock-alt login__icon"></i>
                 <input type="password" name="password" placeholder="Password" className="login__input" value={formData.password} onChange={handleChange}/>
               </div>
-              <a href="#" className="login__forgot">Forgot password?</a>
+              <a href="#" className="login__forgot" onClick={handlePasswordReset}>Forgot password?</a>
               <button type="submit" className="login__button">Sign In</button>
               <div>
                 <span className="login__account">Don't have an Account? </span>

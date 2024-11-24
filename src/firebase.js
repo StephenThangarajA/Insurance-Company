@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import {getAuth} from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -14,9 +14,9 @@ const firebaseConfig = {
   measurementId: "G-Z371T0SFWG",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const db = getFirestore(app);
-export { db };
+const auth = getAuth();
 
-export const auth=getAuth();
+export { db, auth };
