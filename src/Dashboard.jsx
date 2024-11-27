@@ -1,52 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./style/Dashboard.css";
 import Bajaj from './assets/ins-logo1.webp';
 import Royal from './assets/ins-logo2.svg';
 import Logo from './assets/logo1.svg';
 
 const Dashboard = () => {
-  const [isSidebarHidden, setIsSidebarHidden] = useState(window.innerWidth < 768);
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [activeMenu, setActiveMenu] = useState("Dashboard");
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) setIsSidebarHidden(true);
-      if (window.innerWidth > 576) setIsSearchVisible(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const toggleSidebar = () => setIsSidebarHidden((prev) => !prev);
-
-  const toggleSearchBar = () => {
-    if (window.innerWidth < 576) setIsSearchVisible((prev) => !prev);
-  };
-
 
   return (
     <div>
-      <Sidebar isSidebarHidden={isSidebarHidden} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
-      <Content toggleSidebar={toggleSidebar} toggleSearchBar={toggleSearchBar} isSearchVisible={isSearchVisible}/>
+      <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+      <Content />
     </div>
   );
 };
 
-const Sidebar = ({ isSidebarHidden, activeMenu, setActiveMenu }) => {
+const Sidebar = ({ activeMenu, setActiveMenu }) => {
   const menus = [
     { icon: "bxs-dashboard", text: "Dashboard" },
     { icon: "bxs-group", text: "Profile" },
-    { icon: "bxs-message-dots", text: "Notifation" },
+    { icon: "bxs-message-dots", text: "Notification" },
     { icon: "bxs-doughnut-chart", text: "Transaction History" },
     { icon: "bxs-cog", text: "Settings" },
     { icon: "bxs-log-out-circle", text: "Logout", isLogout: true },
   ];
 
   return (
-    <section id="sidebar" className={isSidebarHidden ? "hide" : ""}>
+    <section id="sidebar">
       <a href="#" className="brand">
-        <img src={Logo} className="logo"></img>
+        <img src={Logo} className="logo" alt="Logo" />
         <span className="text">InsureBazaar</span>
       </a>
       <ul className="side-menu top">
@@ -73,14 +55,9 @@ const Sidebar = ({ isSidebarHidden, activeMenu, setActiveMenu }) => {
   );
 };
 
-const Content = ({
-  toggleSidebar,
-}) => {
+const Content = () => {
   return (
     <section id="content">
-      <nav>
-        <i className="bx bx-menu" onClick={toggleSidebar}></i>
-      </nav>
       <Main />
     </section>
   );
@@ -101,6 +78,9 @@ const Header = () => {
     <div className="head-title">
       <div className="left">
         <h1>Dashboard</h1>
+      </div>
+      <div className="right">
+        <h2>Stephen</h2>
       </div>
     </div>
   );
@@ -139,11 +119,11 @@ const DataSection = () => {
 
 const RecentOrders = () => {
   const orders = [
-    { user: "Bajaj Allianz", date: "03-10-2024", status: "Paid", logo: Bajaj},
-    { user: "Royal Sundaram", date: "03-10-2024", status: "Paid", logo: Royal},
-    { user: "Bajaj Allianz", date: "04-09-2024", status: "Paid", logo: Bajaj},
-    { user: "Royal Sundaram", date: "04-09-2024", status: "Paid", logo: Royal},
-    { user: "Bajaj Allianz", date: "03-09-2024", status: "Failed", logo: Bajaj},
+    { user: "Bajaj Allianz", date: "03-10-2024", status: "Paid", logo: Bajaj },
+    { user: "Royal Sundaram", date: "03-10-2024", status: "Paid", logo: Royal },
+    { user: "Bajaj Allianz", date: "04-09-2024", status: "Paid", logo: Bajaj },
+    { user: "Royal Sundaram", date: "04-09-2024", status: "Paid", logo: Royal },
+    { user: "Bajaj Allianz", date: "03-09-2024", status: "Failed", logo: Bajaj },
   ];
 
   return (
@@ -183,8 +163,8 @@ const RecentOrders = () => {
 
 const Todos = () => {
   const todos = [
-    { text: "Bajaj Allianz Insurance Payment"},
-    { text: "Royal Sundaram Insurance Payment"},
+    { text: "Bajaj Allianz Insurance Payment" },
+    { text: "Royal Sundaram Insurance Payment" },
   ];
 
   return (
@@ -195,7 +175,7 @@ const Todos = () => {
       </div>
       <ul className="todo-list">
         {todos.map((todo, index) => (
-          <li key={index} className={todo.completed ? "completed" : ""}>
+          <li key={index}>
             <p>{todo.text}</p>
             <i className="bx bx-dots-vertical-rounded"></i>
           </li>
