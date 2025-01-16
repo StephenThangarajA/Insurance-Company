@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #100039;
+  --primary-color-light: #fffcfa;
+  --primary-color-dark: #FFD700;
+  --text-dark: #18181b;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --red: #FF0000;
+  --max-width: 1200px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.plans-page{
+    background: linear-gradient(to bottom, #100039, white);
+}
+
+.back-button {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--primary-color-dark);
+  margin-bottom: 16px;
+  background-color: transparent;
+  border: none;
+}
+
+.back-button span {
+  margin-right: 8px;
+}
+
+.page-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-color-dark);
+}
+
+.insurance-card {
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.company-logo img {
+  width: 60px;
+  height: auto;
+  padding-right: 16px;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.company-details h4 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+.company-details p {
+  margin: 4px 0 0;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.card-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.proceed-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.proceed-button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.insurance-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .insurance-card {
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .company-logo img {
+    width: 50px;
+  }
+
+  .company-details h4 {
+    font-size: 16px;
+  }
+
+  .company-details p {
+    font-size: 14px;
+  }
+
+  .card-price {
+    font-size: 16px;
+  }
+
+  .proceed-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 28px;
+  }
+
+  .insurance-card {
+    padding: 10px;
+  }
+
+  .company-logo img {
+    width: 40px;
+  }
+
+  .company-details h4 {
+    font-size: 14px;
+  }
+
+  .company-details p {
+    font-size: 12px;
+  }
+
+  .card-price {
+    font-size: 14px;
+  }
+
+  .proceed-button {
+    font-size: 12px;
+  }
+}

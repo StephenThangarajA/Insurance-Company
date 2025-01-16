@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #100039;
+  --primary-color-light: #fffcfa;
+  --primary-color-dark: #FFD700;
+  --text-dark: #18181b;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --red: #FF0000;
+  --black: #000000;
+  --max-width: 1200px;
+}
+
+.plan-details-container .back-button {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: var(--primary-color);
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.plan-details-container .hero-section {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+}
+
+.plan-details-container .text-section {
+  width: 60%;
+  padding: 0 32px;
+}
+
+.plan-details-container .text-headline {
+  margin-bottom: 12px;
+  color: var(--text-light);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: .7px;
+}
+
+.plan-details-container .text-title {
+  width: 500px;
+  margin-bottom: 10px;
+  color: var(--black);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.plan-details-container .text-descritpion {
+  width: 475px;
+  margin: 32px 0;
+  color: var(--text-light);
+  font-size: 18px;
+  letter-spacing: .7px;
+  line-height: 1.6rem;
+}
+
+.plan-details-container .text-appointment-btn {
+  padding: 14px 20px;
+  margin-top: 30px;
+  color: var(--white);
+  border: 1px solid transparent;
+  border-radius: 28px;
+  outline: transparent;
+  background-color: var(--primary-color);
+  font-size: 18px;
+  letter-spacing: .8px;
+  cursor: pointer;
+  transition: all .4s ease;
+}
+
+.plan-details-container .text-appointment-btn:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+
+.plan-details-container .text-stats {
+  margin-top: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 48px;
+}
+
+.plan-details-container .text-stats-container {
+  text-align: center;
+}
+
+.plan-details-container .text-stats-container > p {
+  color: var(--text-light);
+  font-size: 22px;
+  letter-spacing: .7px;
+}
+
+.plan-details-container .text-stats-container p:first-child {
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.plan-details-container .hero-image-section {
+  width: 40%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.plan-details-container .hero-image1 {
+  width: 100%;
+  height: auto;
+}
+
+.plan-details-container .hero-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.plan-details-container .scroll-up {
+  width: 45px;
+  height: 45px;
+  display: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: var(--white);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 24px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.plan-details-container .show-scroll {
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    .plan-details-container .hero-image-section {
+    display: none;
+  }
+  .plan-details-container .text-section {
+    width: 100%;
+    padding: 0;
+  }
+  .plan-details-container .text-title, .plan-details-container .text-descritpion {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+    .plan-details-container .text-headline {
+    font-size: 20px;
+  }
+  .plan-details-container .text-title {
+    font-size: 28px;
+  }
+  .plan-details-container .text-descritpion {
+    font-size: 16px;
+  }
+  .plan-details-container .text-appointment-btn {
+    font-size: 16px;
+  }
+  .plan-details-container .text-stats {
+    gap: 18px;
+  }
+  .plan-details-container .text-stats-container > p {
+    font-size: 16px;
+  }
+  .plan-details-container .text-stats-container p:first-child {
+    font-size: 22px;
+  }
+  .plan-details-container .scroll-up {
+    bottom: 32px;
+    right: 32px;
+  }
+}
+
+.plan-details-container .section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  gap: 24px;
+  background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+}
+
+.plan-details-container .left-section {
+  width: 45%;
+  text-align: center;
+}
+
+.plan-details-container .hero-image {
+  width: 80%;
+  height: auto;
+}
+
+.plan-details-container .right-section {
+  width: 50%;
+  padding: 20px;
+}
+
+.plan-details-container .container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 30px;
+  background-color: var(--white);
+  box-shadow: 0 5px 10px var(--primary-color);
+}
+
+.plan-details-container .container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.plan-details-container .container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: var(--primary-color-dark);
+}
+
+.plan-details-container .container form{
+    margin-top: 16px;
+    min-height: 490px;
+}
+
+.plan-details-container .container form .form{
+    position: absolute;
+    background-color: var(--white);
+    transition: 0.3s ease;
+}
+
+.plan-details-container .container form .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+
+.plan-details-container form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.plan-details-container form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+.plan-details-container .container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: var(--text-dark);
+}
+
+.plan-details-container .container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.plan-details-container form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.plan-details-container .checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-details-container .input-field label{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.plan-details-container .fields{
+    margin-bottom: 10px;
+}
+
+.plan-details-container input[type="file"]{
+    color: var(--text-light);
+}
+
+.plan-details-container .input-field input[type="file"] {
+  padding: 5px;
+  font-size: 14px;
+  color: var(--black);
+  border: 1px solid var(--text-light);
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.plan-details-container .input-field input[type="file"]:focus {
+  box-shadow: 0 3px 6px var(--black);
+}
+
+.plan-details-container .input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark);
+    border-radius: 5px;
+    border: 1px solid var(--text-dark);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.plan-details-container .input-field input :focus,
+.plan-details-container .input-field select:focus{
+    box-shadow: 0 3px 6px var(--black);
+}
+
+.plan-details-container .input-field select,
+.plan-details-container .input-field input[type="date"]{
+    color: var(--text-light);
+}
+
+.plan-details-container .input-field input[type="date"]:valid{
+    color: var(--text-light);
+}
+
+.plan-details-container .container form button, .plan-details-container .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: var(--primary-color);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.plan-details-container .container form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.plan-details-container form button:hover{
+    background-color: var(--primary-color);
+}
+
+.plan-details-container form button i,
+.plan-details-container form .backBtn i{
+    margin: 0 6px;
+}
+
+.plan-details-container form .backBtn i{
+    transform: rotate(180deg);
+}
+
+.plan-details-container form .buttons{
+    display: flex;
+    align-items: center;
+}
+
+.plan-details-container form .buttons button , .plan-details-container .backBtn{
+    margin-right: 14px;
+}
+
+@media (max-width: 750px) {
+    .plan-details-container .container form{
+        overflow-y: scroll;
+    }
+    .plan-details-container .container form::-webkit-scrollbar{
+       display: none;
+    }
+    .plan-details-container form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    .plan-details-container form .fields .input-field, .plan-details-container .checkbox-container{
+        width: 100%;
+    }
+}
